@@ -1,0 +1,563 @@
+# x ="Hadley Wickham"
+# ?mean
+# example ("mean")
+
+#numerical vector
+
+my_numaber <- 42
+my_numaber2 <- 1:5
+my_numaber3 <-c(2,4,6,8,10)
+my_numaber
+class(my_numaber)
+
+#character vector
+
+my_character <- "universe"
+my_character <- c("universe","sun","moon")
+my_character
+class(my_character)
+
+#logical vctor
+
+my_logical<-FALSE
+my_logical<-c(TRUE,FALSE)
+my_logical
+class(my_logical)
+
+
+
+#left and right assignment
+
+a =5
+a
+print(a)
+
+a <-6  #left assignment
+a
+
+6 -> a #right assignment
+a
+
+
+# assign a value to the variable my_apples
+
+my_apples <- 5
+my_apples
+
+#fix the assignment of my_oranges
+my_oranges <-6
+my_oranges
+
+#create the variable my_fruit and print it out
+my_fruit <-my_apples + my_oranges
+my_fruit
+
+#arithmatic operators
+
+a = 8
+a
+b= 2
+b
+
+c =a+b
+c
+d= a-b
+d
+e=a*b
+e
+f=a/b
+f
+g=a^2
+g
+
+h= a%%b #modulus operator gives : remainder
+h
+5%%2
+
+i=a%/%b# iteger division operator gives: quotient
+i
+
+#Relational operators
+a
+b
+
+a>b
+a<b
+a==b
+a!=b
+a>=b
+a<=b
+
+x <-c(1:10)
+x
+x>8
+
+#logical operators in R
+
+# AND operator -only True ifboth are True
+TRUE & TRUE
+FALSE & FALSE
+TRUE & FALSE
+FALSE & TRUE
+
+x<- 12
+x>5 & x<15
+
+# OR operator True if ateleast one is true , False if both are False
+TRUE | TRUE
+FALSE | FALSE
+TRUE | FALSE
+FALSE | TRUE
+
+y <-4
+y<5 |y>15
+
+#Not operator - True if atleast one is true , False only if both are false
+!TRUE
+!FALSE
+
+c(TRUE,TRUE,FALSE) & c (TRUE,FALSE,FALSE)
+
+#&&- logical And - it would check only first element
+
+c(TRUE,TRUE,FALSE) && c (TRUE,FALSE,FALSE)
+
+#||- logical or - it would check only first element
+
+c(TRUE,TRUE,FALSE) || c (TRUE,FALSE,FALSE)
+
+--------------------------
+  
+#If else 
+  
+a <- 5
+if(a < 4)
+{
+  print("a is less than 4")
+}else
+{
+  if(a==4)
+  {
+    print("a has the value of 4")
+  }else
+  {
+    print("a >4")
+  }
+}
+
+
+#Nested if..else
+
+if(a < 4)
+  {
+  print("a is less than 4")
+  
+}else if (a==4)
+  {
+  print("a has the value of 4")
+}else
+  print("a >4")
+
+#ifelse function
+ifelse(a==4 ,"Yes","No")
+?ifelse
+
+#switch function as controlled if else statement
+#switch (expression, list)
+#The expression is evaluated and based on this value, the corresponding item in the list is returned.
+#If the value evaluated from the expression matches with more than one item of the list
+#switch() function returns the first matched item
+
+?switch
+switch (2,"apples", "bat","cat")
+switch("color","color"= "green","shape"= "square","length"= 5)
+color="green"
+switch(color, "red" = {print("apple")}, "green" = {print("avocado")}, "black" = {print("grapes")})
+###############
+
+# Loops in R
+
+# For Loop
+# The for loop executes a code for a specific number of times
+
+vec <- c(1,2,3,4)
+for (i in vec)
+{
+  print(i)
+}
+
+#while loop
+# in the while loop, while the test expression remains true,
+#the code inside the loop keeps on executing 
+i<- 1
+while (i<6)
+{
+  print(i)
+        i =i+1
+  }
+
+i=1
+p=5
+while(i<=p)
+{
+  print(i)
+  i = i+1
+}
+
+#Repeat Loop
+# A repeat loop iterates a code multiple times. 
+# Since there is no conditional check to exit the loop, 
+# you must specify it inside the of the loop.
+
+x <- 1
+repeat
+  {
+  print(x)
+  x=x+1
+  if (x==6)
+    {
+    break
+  }
+}
+
+# Break Statement - when present inside a loop, it stops the iteration from executing
+# and forces the flow to jump off the loop
+# Next Statement - it helps in skipping the current iteration of a loop
+
+num <- 1:5
+for (i in num)
+{
+  if (i == 3)
+  {
+    next
+  }
+  print(i)
+}
+#####################
+
+name = readline(prompt = "Please enter your name:shubhankar tiwari")
+name
+
+############
+#Function
+?mean
+
+mean(c(1,5,6,7))
+
+vec<- c(1,5,6,7,NA)
+vec <-c(19,15,63,27,NA)
+mean(vec,na.rm = TRUE)
+sd(vec)
+?sd
+sd(x= vec, na.rm = FALSE)
+sd(x= vec, na.rm = TRUE)
+
+# Commonly used functions
+# Numeric Function
+sqrt(9)
+ceiling(3.0001)
+floor(5.9)
+exp(2)
+log(1)
+
+# append() - add element to a vector
+x = 1:5
+x
+x=append(x,7)
+x
+
+# identical()- test if two objects are identical
+i <- 5
+identical(i, 7)
+#length() - return the length of vector
+vec1 <- 1:17
+length(vec1)
+#ls() - list objects in the current environment
+ls("package:stats")
+#range() - returns the range
+range(vec1)
+
+#rep(x,n) - repeat the number x, n time
+
+rep(5, 10)
+rep(5, length(vec1))
+
+#rev()- provide the reverse version of the argument
+
+p=rev(c(1,3,5,7))
+p
+
+#seq(x,y,n) - generate regular sequences from x to y, spaced by n
+?seq
+seq(2,100,2)
+seq(100,1)
+
+#unique() - Remove duplicate entries from the vector
+vec2 <- c(1,2,3, 1,3,5,5,2)
+vec2
+unique(vec2) #to find the unique numbers in the vecto
+
+#Statistical function
+min(1:5)
+max(1:5)
+range(1:5)
+
+
+# Character Function
+#tolower() - convert a string to lower case letter
+tolower(x = c("ABhilasha", "RENU", "MAnish", "Abhilasha"))
+#toupper () - convert a string to upper case letters
+toupper(x = c("a", "abhilasha"))
+# Substr
+?substr
+x <- "abcdef"
+substr(x, 2, 4) 
+#grep() - use for regular expression
+z= c("WaterMelon", "Water Melon", "Earth", "H2o", "water blue water")
+z
+?grep
+grep(pattern = "Water",x = z)
+
+grep(pattern = "Water",x = z, ignore.case = T)
+
+#sub() - replace pattern only at the first place
+?sub
+sub(pattern = "Water",x =z, replacement = "H2O",ignore.case = T)
+#gsub() - replace pattern all the places
+gsub(pattern = "Water",x =z, replacement = "H2O",ignore.case = T)
+paste("Rajib","Layek")
+paste("Rajib","layek", sep =" ")
+####################
+
+#writing function -ex 1
+
+triple <-function(x)
+{
+  y<-3*x
+  return(y)
+}
+
+triple(3)
+triple(7)
+
+# Writing Function - Example 2
+
+math_magic <- function(a,b)
+  {
+  a*b + a/b
+}
+math_magic(a= 2, b=1)
+math_magic(2)
+#as math_magic(2) will give argument b is missing so we have to assign a diffault value to b as we did below
+math_magic <- function(a,b=1)
+  {
+  a*b + a/b
+}
+math_magic(2,1)
+math_magic(2)
+
+###############
+# Lesson 4: R Data Structure
+#############################################################################################
+#############################################################################################
+# Vectors: are one-dimension arrays that can hold numeric data, character data, or logical data. 
+#############################################################################################
+# VECTOR
+# Declare variables of different types
+# In R, you create a vector with the combine function c()
+############################################################################
+#numerical vector: 
+vec1 <- 42
+vec1
+vec1 <- c(1,2,3,4,5) # use of combine function
+vec1
+vec1 <- c(1:5) # Use of colon operator
+vec1
+class(vec1) #class of vecor
+vec1[2] #Accessing vector element
+vec1[c(1,3)] # Accessing first and third element
+vec5=c(1L, 2L, 4.5) #if we mix integer and 
+vec5
+class(vec5)
+
+############################################################################
+#Character vector
+vec2 <- "universe"
+vec2
+vec2 <- c("universe","sun","moon")
+vec2
+class(vec2)
+vec2[3]
+vec2[c(1,3)]
+vec6 = c(1L, 4.5, "Abhijeet") #if we mix character and numeric then all the values will be converted to character
+vec6
+class(vec6)
+############################################################################
+#logical vector
+vec3 <- FALSE
+vec3
+vec3 <- c(TRUE,FALSE)
+vec3
+class(vec3)
+vec3[1]
+vec7 = c(TRUE, 1, 4.5) # Numeric given preference
+vec7
+class(vec7)
+vec8= c(TRUE, 1, 5, "Sudhir") # Character given preference
+vec8
+class(vec8)
+# paste() : combine two charater
+name = c ("Uma", "maheshwar")
+name
+name = paste("Uma", "maheshwar")
+name
+
+#############################################################################################
+#MATRICES: Two Dimentional array
+#############################################################################################
+# vector with -rows and columns (same data type and length)
+?matrix
+mat1 <- matrix(c(1,2,3,4),nrow=2,ncol=2, byrow = TRUE)
+mat1
+mat2 <- matrix(c(1,2,3,4),nrow=2,ncol=2, byrow = FALSE)
+mat2
+mat2[1,] # row 1
+mat2[2,] # row 2
+mat2[,1] # column 1
+mat2[,2] # column 2
+mat2[1,2] # row 1 column 2
+#############################################################################################
+#############################################################################################
+#ARRAY : Similar to metrices but can have more than two dimensions
+#############################################################################################
+#Numeric-Character-Boolean
+?array
+Arr <- array (c(1:27), dim = c(3,3,3))
+Arr
+Arr[1,1,1]
+Arr[2,1,1]
+Arr[3,1,2]
+z <- array(1:24, dim=c(2,3,4))
+z
+# Ex: 3 Dim : Age, Sex, Race
+# Ex: 4 Dim : Age, Sex. Race, Country
+
+#############################################################################################
+# DATAFRAME: Similar to general metrics but its columns can contain 
+# different modes of data types such as numeric and character
+#############################################################################################
+# Creating a datagrame
+num <- c(2, 3, 5) 
+char <- c("aa", "bb", "cc") 
+log <- c(TRUE, FALSE, TRUE) 
+df = data.frame(num, char, log)       # df is a data frame
+df
+#inbuilt dataframe in R - mtcars
+mtcars
+#data description
+#https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html
+head(mtcars) # head()- first several rows
+tail(mtcars) # tail()-last several rows
+str(mtcars) # structure of the dataset
+mtcars[1:2,1:4] # First 4 attributes of the first 2 brand of the car
+summary(mtcars)
+mtcars$mpg #Accessing column
+mtcars$disp #Accessing column
+mtcars$gear
+#accessing column/attribute
+df <- mtcars
+df
+#Using $ 
+df$wt
+df$disp 
+
+##################################################################################
+# Dropping a attribute
+df[,-3] # Drop 3 column
+df[,-c(2,3)] # Drop 2nd and 3rd column
+#################################################################################
+# Subset ()
+car1 <- subset (df, cyl > 6)
+car1
+car1$cyl
+car2 <- subset (df, hp >50)
+car2
+car2$hp
+################################################################################
+#rbind() - Combine row
+str(df)
+df1 <- df[1:20,]
+str(df1)
+df2 <- df[21:32,]
+str(df2)
+df_full <- rbind(df1,df2)
+str(df_full)
+# cbind() - Combine column
+df3 <- df$mpg
+df3
+df4 <- df$cyl
+df4
+df_full <- cbind(df3,df4)
+df_full 
+#############################################################################################
+
+#############################################################################################
+#FACTOR
+#############################################################################################
+# In a data frame, character vectors are automatically converted into factors
+name <- c("joe","john","nancy")
+class(name)
+sex <- c("M","M","F")
+class(sex)
+age <- c(27,26,26)
+class(age)
+df <- data.frame(name,sex,age)
+df
+class(df)
+class(df$name)
+class(df$sex)
+class(df$age)
+
+##############################################################################
+# Change numeric to factor class
+str(mtcars)
+mtcars$cyl = as.factor(mtcars$cyl)
+mtcars$am = as.factor(mtcars$am)
+mtcars$gear = as.factor(mtcars$gear)
+mtcars$carb = as.factor(mtcars$carb)
+str(mtcars)
+##############################################################################
+
+##############################################################################
+# Example  - Change the name of the factors using level()
+gender_vector <- c("Male", "Female", "Female", "Male", "Male")
+gender_vector
+class(gender_vector)
+# Convert gender_vector to a factor
+factor_gender_vector <- as.factor(gender_vector)
+factor_gender_vector # factor_gender has two levels - Male and Female
+# Change the name of the factors using level()
+levels(factor_gender_vector) <- c("F", "M")
+factor_gender_vector
+#############################################################################################
+
+#############################################################################################
+#LIST: It may contain a combinaton of vectors, matrices, data frames and even other list
+#############################################################################################
+# Vector with numerics from 1 up to 10
+my_vector <- 1:10 
+# Matrix with numerics from 1 up to 9
+my_matrix <- matrix(1:9, ncol = 3)
+# First 3 rows of the built-in data frame mtcars
+my_df <- mtcars[1:3,]
+# Construct list with these different elements:
+my_list <- list(my_vector, my_matrix, my_df)
+my_list # no name as of now
+# give name using name ()
+names(my_list) <- c("vec", "mat", "df")
+# Print out my_list
+my_list
+#############################################################################################
+
+
+ls("package:stats")
